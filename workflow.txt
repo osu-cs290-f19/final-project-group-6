@@ -26,3 +26,32 @@ Needed job:
 
 
 Tools we can use: React
+
+
+
+Resources:
+1: http://www.chinawhisper.com/top-10-treasures-of-ancient-china/
+2: https://www.livescience.com/60978-photos-treasures-from-ancient-china-tombs.html
+3: https://zh.wikipedia.org/wiki/Category:%E4%B8%AD%E5%9B%BD%E6%96%87%E7%89%A9
+
+主页introduction内容
+	Home  	Category		Contact US		More
+						ERA					About US			Resources links
+							1.
+							2.
+							3.
+						PROVINCE
+							1.
+							2.
+							3.
+
+(create)
+
+按照朝代 省份--筛选文物
+创建中含有--朝代（时间），省份
+
+	类别：朝代：「夏，商，秦朝，汉，三国，晋，南北，唐宋元明清」
+	https://zh.wikipedia.org/wiki/Category:%E4%B8%AD%E5%9B%BD%E5%90%84%E6%9C%9D%E4%BB%A3%E6%96%87%E7%89%A9
+
+	省份：*先填写朝代的文物再看省份
+	https://zh.wikipedia.org/wiki/Category:%E4%B8%AD%E5%9B%BD%E5%90%84%E7%9C%81%E6%96%87%E7%89%A9
