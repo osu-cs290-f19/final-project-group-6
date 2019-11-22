@@ -1,8 +1,8 @@
 Work-flow:
 
 1:Create html file
-Contents: 
-#Chinese ancient treasures 
+Contents:
+#Chinese ancient treasures
 	#introductions
 	#pictures
 	#"time"
@@ -10,7 +10,7 @@ Contents:
 2:Create CSS file
 Add contents:
 "Home" "Menu" "Contact US"
-	"Create new" "Modify exists(update)" 
+	"Create new" "Modify exists(update)"
 	"Delete" --small icon besides the picture
 
 3:Create JS logic file
@@ -23,3 +23,6 @@ Needed job:
 4:Add Node.js to proceed the server-client operation
 
 5:Optional
+
+
+Tools we can use: React
