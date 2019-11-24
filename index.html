@@ -5,7 +5,10 @@
     <title>Chinese culture relics</title>
 
 <!-- add third party style(font or something) -->
-    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <!-- 汉字 -->
+    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap&subset=chinese-simplified" rel="stylesheet">
+    <!-- English -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href="style.css">
@@ -18,8 +21,18 @@
         <img src="" alt="Chinese logo">
       </div>
       <h1 class="title-name">Chinese culture relics</h1>
-      <h1 class="title-chinese">中国古文物</h1>
-      
+      <!-- <h1 class="title-chinese">中国古文物</h1> -->
+      <div class="title-chinese">
+        <p>
+        	<span data-text="中">中</span>
+        	<span data-text="国">国</span>
+        	<span data-text="古">古</span>
+        	<span data-text="文">文</span>
+        	<span data-text="物">物</span>
+        </p>
+      </div>
+
+
     </header>
 
     <main>
@@ -34,9 +47,7 @@
           </div>
         </div>
 
-        <div class="about-us">
-          <button class="about-ours">ABOUT US</button>
-        </div>
+        <button class="about-ours">ABOUT US</button>
       </div>
 
     </main>
