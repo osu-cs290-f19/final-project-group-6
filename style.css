@@ -42,7 +42,7 @@ p span::after {
   display:none;
   position:absolute;
   top:0;
-  left:-1px;
+  /* left:-1px; */
   -webkit-transform-origin:left top;
       -ms-transform-origin:left top;
           transform-origin:left top;
