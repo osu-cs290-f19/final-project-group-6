@@ -64,4 +64,6 @@ Resources:
 
 
 
-	Teach me: https://blog.csdn.net/kobbbb/article/details/8522316
+	Teach me:
+	https://blog.csdn.net/kobbbb/article/details/8522316 (html跳转)
+	https://www.runoob.com/css3/css3-images.html  (图片怎么摆)
