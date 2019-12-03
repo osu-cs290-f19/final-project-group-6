@@ -67,3 +67,18 @@ Resources:
 	Teach me:
 	https://blog.csdn.net/kobbbb/article/details/8522316 (html跳转)
 	https://www.runoob.com/css3/css3-images.html  (图片怎么摆)
+	
+	
+	
+	
+	
+	
+	
+	=====================================================
+	1.主页和重写内容主页html、css----BC AC（时间）
+	2.server.js 404.html
+	3.create、update、（delete）---每个内容页 下拉菜单
+	4.handlebar
+	5.database
+	=====================================================
+	=====================================================
