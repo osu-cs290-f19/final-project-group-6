@@ -1,5 +1,5 @@
 Work-flow:
-
+==========================================================================================================
 1:Create html file
 Contents:
 #Chinese ancient treasures
@@ -23,29 +23,13 @@ Needed job:
 4:Add Node.js to proceed the server-client operation
 
 5:Optional
-
-
-Tools we can use: React
-
-
+===========================================================================================================
 
 Resources:
 1: http://www.chinawhisper.com/top-10-treasures-of-ancient-china/
 2: https://www.livescience.com/60978-photos-treasures-from-ancient-china-tombs.html
 3: https://zh.wikipedia.org/wiki/Category:%E4%B8%AD%E5%9B%BD%E6%96%87%E7%89%A9
 
-主页introduction内容
-	Home  	Category		Contact US		More
-						ERA					About US			Resources links
-							1.
-							2.
-							3.
-						PROVINCE
-							1.
-							2.
-							3.
-
-(create)
 
 按照朝代 省份--筛选文物
 创建中含有--朝代（时间），省份
@@ -56,17 +40,9 @@ Resources:
 	省份：*先填写朝代的文物再看省份
 	https://zh.wikipedia.org/wiki/Category:%E4%B8%AD%E5%9B%BD%E5%90%84%E7%9C%81%E6%96%87%E7%89%A9
 
-
-
-
-
-
-
-
-
 	Teach me:
 	https://blog.csdn.net/kobbbb/article/details/8522316 (html跳转)--感觉没啥用
-
+===========================================================================================================
 
 Tasks distribution:
 	=====================================================
