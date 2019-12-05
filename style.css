@@ -10,6 +10,7 @@
 } */
 /* ============3d start========== */
 .title-chinese{
+  height: 300px;
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
@@ -20,6 +21,8 @@
       -ms-flex-pack:center;
           justify-content:center;
   background-color:#801717;
+  padding-top: -20px;
+
 }
  p{
   color:#fff;
@@ -110,8 +113,8 @@ p span:hover::after {
     font-family: 'Dancing Script', cursive;
     background-color: white;
     color: black;
-    padding: 16px;
-    font-size: 16px;
+    /* padding: 16px; */
+    font-size: 40px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
@@ -127,9 +130,9 @@ p span:hover::after {
 .dropdown-content {
   font-family: 'Dancing Script', cursive;
     display: none;
-    font-size: 12px;
+    font-size: 30px;
     position:absolute;
-    background-color: gray;
+    background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -158,3 +161,37 @@ p span:hover::after {
     background-color: #3e8e41;
 }
 /* -------------drop down */
+.menu{
+  position: absolute;
+  top:0px;
+}
+.home-button {
+  font-size: 40px;
+  background-color: white;
+}
+.home-button:hover{
+  cursor: pointer;
+}
+
+.about-ours{
+  font-size:40px;
+  background-color: white;
+}
+.about-ours{
+  cursor: pointer;
+}
+.title-name{
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  background-color:#801717;
+  margin-top:60px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+}
