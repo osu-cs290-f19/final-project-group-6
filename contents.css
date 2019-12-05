@@ -64,7 +64,7 @@ body {
   .menu{
     position: absolute;
     top:0px;
-    margin: 10px;
+
   }
   .home-button {
     font-size: 40px;
@@ -81,7 +81,10 @@ body {
   .about-ours{
     cursor: pointer;
   }
-
+.posts{
+  
+  top:300px;
+}
 .picBox {
   float:left;
   width:12.5%;
@@ -93,6 +96,9 @@ body {
           perspective: 1000px;
   cursor: pointer;
   margin: 10px;
+
+  display: inline-block;
+
 }
   .picBox img {
     width: 100%;
