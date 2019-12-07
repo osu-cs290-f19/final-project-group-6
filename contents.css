@@ -140,8 +140,9 @@ body {
     text-align: center;
     text-transform: capitalize;
     padding-top: 70px; }
-  .post-info-container .post-text-input {
-    padding: 10px;
+  .post-text-input {
+    padding: 20px;
+    /* border:10px; */
 
   }
   .post-info-container .post-time-input:after, .post-info-container .post-text-input:after {
@@ -209,6 +210,9 @@ p:after {
   background-color: #f9d2b2;
   border-color: #333;
   color: #333;
+}
+#sell-something-button{
+  position:fixed;
 }
 #sell-something-button:hover{
   cursor: pointer;
