@@ -10,7 +10,8 @@
 } */
 /* ============3d start========== */
 .title-chinese{
-  height: 300px;
+  margin-top: 60px;
+  /* height: 300px; */
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
@@ -20,7 +21,11 @@
   -webkit-justify-content:center;
       -ms-flex-pack:center;
           justify-content:center;
-  background-color:#801717;
+    background-image: url('greatwall.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    background-size: 100% 600px;
   padding-top: -20px;
 
 }
@@ -109,6 +114,7 @@ p span:hover::after {
 }
 
 /* -------------drop down */
+
 .drop-title {
     font-family: 'Dancing Script', cursive;
     background-color: white;
@@ -119,24 +125,6 @@ p span:hover::after {
     cursor: pointer;
     border-radius: 10px;
 }
-
-/* 容器 <div> - 需要定位下拉内容 */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* contents of dropdown- default:hide */
-.dropdown-content {
-  font-family: 'Dancing Script', cursive;
-    display: none;
-    font-size: 30px;
-    position:absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
 .about-ours{
   font-family: 'Dancing Script', cursive;
   border:none;
@@ -164,6 +152,8 @@ p span:hover::after {
 .menu{
   position: absolute;
   top:0px;
+  left:20px;
+  margin:2px;
 }
 .home-button {
   font-size: 40px;
@@ -190,8 +180,11 @@ p span:hover::after {
   -webkit-justify-content:center;
       -ms-flex-pack:center;
           justify-content:center;
-  background-color:#801717;
-  margin-top:60px;
+  background-color:#a40000;
+  margin-top:5px;
   margin-bottom: 0px;
-  padding-top: 20px;
+
+}
+.greatwall{
+
 }
