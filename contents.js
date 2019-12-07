@@ -1,3 +1,4 @@
+//果冻按键
 var $button = document.querySelector('.button');
 $button.addEventListener('click', function() {
   var duration = 0.3,
@@ -6,15 +7,20 @@ $button.addEventListener('click', function() {
   TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
   TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
 });
+//返回Home
+document.getElementById('home').addEventListener('click', function(){
+  window.location.href="index.html";
+});
 
 
+//创建新文本。
 document.getElementById("filter-update-button").addEventListener("click", update);
 document.getElementById("sell-something-button").addEventListener("click", modal_toggle);
 document.getElementById("modal-close").addEventListener("click", modal_toggle);
 document.getElementById("modal-cancel").addEventListener("click", modal_toggle);
 document.getElementById("modal-accept").addEventListener("click", modal_accept);
 
-/*====================   Global posts   ====================*/
+
 var posts = [];
 var current_post = document.getElementById("posts").firstElementChild;
 var size = document.getElementById("posts").childElementCount;
