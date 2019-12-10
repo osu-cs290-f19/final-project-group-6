@@ -39,21 +39,10 @@ function modal_toggle() {
     document.getElementById("modal-backdrop").classList.toggle('hidden');
     document.getElementById("sell-something-modal").classList.toggle('hidden');
 }
-var time = document.getElementById('post-time-input');
-var textContent = 0;
-time.addEventListener('change', function listener(event) {
-	textContent = event.currentTarget.value;
-	textContent = textContent.replace(/[!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}~]/g, '').toLowerCase();
-	event.stopPropagation();
-});
+
 function modal_accept() {
 
 
-
-    if(textContent!='BC'||textContent!='AC'){
-      alert("Please enter 'BC' or 'AC' in the Time section!")
-      return;
-    }
     if (!modal_check_inputs()) {
         alert("Please fill in all entries.");
         return;
@@ -66,7 +55,7 @@ function modal_accept() {
     clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
     clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
     clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
-
+    
 
     posts.push(clone);
     document.getElementById("posts").appendChild(clone);
