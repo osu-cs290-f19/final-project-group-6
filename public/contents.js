@@ -55,7 +55,7 @@ function modal_accept() {
     clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
     clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
     clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
-    
+
 
     posts.push(clone);
     document.getElementById("posts").appendChild(clone);
@@ -81,4 +81,9 @@ function update() {
     for (var i = 0; i < size; i++) {
         posts_elem.removeChild(posts_elem.firstElementChild);
     }
+}
+
+
+function delete_Ele(){
+  
 }
