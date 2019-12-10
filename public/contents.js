@@ -85,5 +85,5 @@ function update() {
 
 
 function delete_Ele(){
-  
+  var id=document.getElementById();
 }
