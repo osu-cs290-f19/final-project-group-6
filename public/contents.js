@@ -93,7 +93,7 @@ document.getElementById("delete-post").addEventListener("click", function delete
     console.log('123');
     post[0].parentNode.removeChild(post[0]);
   }
-  else{
+  else if(post.length==0){
     alert("You don't have any posts to delete! ");
   }
 });
