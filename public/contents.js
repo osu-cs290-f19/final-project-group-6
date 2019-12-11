@@ -50,12 +50,13 @@ function modal_accept() {
 
     var last_post = document.getElementById("posts").lastElementChild;
     var clone = last_post.cloneNode(true);
+	clone.setAttribute("data-type", document.getElementById("post-time-input").value);
     clone.setAttribute("data-price", document.getElementById("post-time-input").value);
     clone.firstElementChild.firstElementChild.firstElementChild.setAttribute("src", document.getElementById("post-photo-input").value);
     clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
     clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
     clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
-
+    
 
     posts.push(clone);
     document.getElementById("posts").appendChild(clone);
@@ -81,9 +82,4 @@ function update() {
     for (var i = 0; i < size; i++) {
         posts_elem.removeChild(posts_elem.firstElementChild);
     }
-}
-
-
-function delete_Ele(){
-  var id=document.getElementById();
 }

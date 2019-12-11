@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="contents.css">
     <script src="TweenMax.min.js"> </script>
     <script src="contents.js" charset="utf-8" defer></script>
-
+    <script src="search.js"> </script>
 </head>
 <body>
 
@@ -16,10 +16,10 @@
     <button class="home-button" id="home">HOME</button>
 
     <div class="dropdown">
-      <button class="drop-title" id="drop-relics">RELICS</button>
+      <button class="drop-title" id="drop-relics"><a href="javascript:search(0)">RELICS</a></button>
       <div class="dropdown-content">
-        <a href="#">->BC</a>
-        <a href="#">->AC</a>
+        <a href="javascript:search(1)">->BC</a>
+        <a href="javascript:search(2)">->AC</a>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
   </div>
 <main>
 
-    <div class="post">
+    <div class="post" data-type="BC">
         <img src="http://www.chinawhisper.com/wp-content/uploads/2014/02/maogong-ding.jpg" alt="wenwu">
         <div class="post-info-container">
             <h3 class="post-time-input">Period: West Zhou Dynasty (1046–771 BC)</h3>
@@ -37,7 +37,7 @@
                     It was unearthed in 1851 during the Qing Dynasty (1644-1911) from Mount Qi in Shaanxi Province. The characters cast inside the bowl of the Cauldron, consisting of 500 characters arranged in 32 lines, is the longest bronze inscription in the world.</p1>
         </div>
     </div>
-    <div class="post">
+    <div class="post" data-type="AC">
         <img src="http://www.chinawhisper.com/wp-content/uploads/2014/02/Ju-Ware-Narcissus-Planter.jpg" alt="wenwu">
         <div class="post-info-container">
             <h3 class="post-time-input">Period: Northern Sung Period (960-1126 BC)</h3>
@@ -46,7 +46,7 @@
             Ju Ware Narcissus Planter is known as the only narcissus planter without any crackle to its glaze. This lustrous, elegant aesthetic, and the harmonious effect it produced, was much sought after during the Song dynasty..</p1>
         </div>
     </div>
-    <div class="post">
+    <div class="post" data-type="BC">
       <div class="post-image-container">
         <img src="http://www.chinawhisper.com/wp-content/uploads/2014/02/Timely-Clearing-After-Snowfall.jpg" alt="wenwu">
       </div>
@@ -57,7 +57,22 @@
             Timely Clearing After Snowfall is a 28-character calligraphy work by Wang Xizhi (303-361), a Chinese calligrapher traditionally referred to as the Sage of Calligraphy. It is the only piece of his original work that still exists today.</p1>
         </div>
     </div>
-      <section id="posts">
+     <section id="posts" data-type="AC">
+      <div class="post" data-type="AC" >
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="http://www.chinawhisper.com/wp-content/uploads/2014/02/Complete-Library-of-the-Four-Treasuries.jpg" alt="wenwu">
+            </div>
+            <div class="post-info-container">
+              <h3 class="post-time-input">Period: Qing dynasty (1644-1911 BC)</h3> 
+              <p1 class="post-text-input">
+              Location: National Palace Museum in Taipei
+              Complete Library of the Four Treasuries was ordered by the Qian Long Emperor (1736-1795) of Qing dynasty and was edited under imperial decree by Zhu Yun. It is a collection of major literary works produced in China over successive dynasties and comprises over 3,400 titles bound in more than 36,000 volumes.</p1> 
+
+            </div>
+          </div>
+        </div></section>
+     <!-- <section id="posts" data-type="AC">
         <div class="post">
           <div class="post-contents">
             <div class="post-image-container">
@@ -73,7 +88,7 @@
           </div>
         </div>
 
-      </section>
+      </section>-->
 
 
 
