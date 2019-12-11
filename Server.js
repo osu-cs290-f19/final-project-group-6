@@ -23,9 +23,12 @@ app.get('/',function(req,res,next){
   req.status(200).render('');
 });
 
+app.post('', function (req, res, next) {
+  
+}
 
 
-app.post('*', function(req, res){
+app.get('*', function(req, res){
 	res.status(404);
 	res.render('404');
 });
