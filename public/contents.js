@@ -59,7 +59,6 @@ function modal_accept() {
       clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
       clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
 
-
       posts.push(clone);
       document.getElementById("posts").appendChild(clone);
       modal_toggle();
