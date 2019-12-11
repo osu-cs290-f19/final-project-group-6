@@ -74,11 +74,13 @@ body {
     position: absolute;
     top:0px;
     z-index: 10000;
+    font-family: 'Dancing Script', cursive;
 
   }
   .home-button {
     font-size: 40px;
     background-color: white;
+    font-family: 'Dancing Script', cursive;
   }
   .home-button:hover{
     cursor: pointer;
@@ -307,4 +309,8 @@ p:after {
 
 #modal-cancel:hover {
   background-color: #eee;
+}
+.drop-title a{
+  color:black;
+  text-decoration: none;
 }
