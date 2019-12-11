@@ -155,7 +155,7 @@ body {
   background: #968e8e;
   width: 180px;
   padding: 5px 5px;
-
+  
   position: absolute;
   left: 90%;
   top: 90%;
@@ -163,19 +163,19 @@ body {
   border-radius: 3px;
   z-index: 10000;
 }
-.button:hover{
-    cursor: pointer;
-}
+
   p {
-    font-family: 'Roboto';
+    font-family: 'Roboto'; 
     text-align: center;
     text-transform: uppercase;
     color: #FFF;
     user-select: none;
   }
-
-
-
+  
+p::hover {
+    cursor: pointer;
+  }
+  
 p:after {
     content: "";
     display: block;

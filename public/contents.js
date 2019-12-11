@@ -36,37 +36,32 @@ function modal_toggle() {
     document.getElementById("post-text-input").value = "";
     document.getElementById("post-photo-input").value = "";
     document.getElementById("post-time-input").value = "";
+	 document.getElementById("post-time-input2").value = "AC";
     document.getElementById("modal-backdrop").classList.toggle('hidden');
     document.getElementById("sell-something-modal").classList.toggle('hidden');
 }
 
 function modal_accept() {
 
+
     if (!modal_check_inputs()) {
         alert("Please fill in all entries.");
         return;
     }
-    // var time=;
-    var input=document.getElementById('post-time-input').value.toLowerCase();
-    if(input=='bc'||input=='ac'){
-      console.log('ok with time');
-      var last_post = document.getElementById("posts").lastElementChild;
-      var clone = last_post.cloneNode(true);
-  	clone.setAttribute("data-type", document.getElementById("post-time-input").value);
-      clone.setAttribute("data-price", document.getElementById("post-time-input").value);
-      clone.firstElementChild.firstElementChild.firstElementChild.setAttribute("src", document.getElementById("post-photo-input").value);
-      clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
-      clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
-      clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
 
-      posts.push(clone);
-      document.getElementById("posts").appendChild(clone);
-      modal_toggle();
-    }
-    else{
-      alert('no time!');
-    }
+    var last_post = document.getElementById("posts").lastElementChild;
+    var clone = last_post.cloneNode(true);
+	clone.setAttribute("data-type", document.getElementById("post-time-input2").value);
+    clone.setAttribute("data-price", document.getElementById("post-time-input").value);
+    clone.firstElementChild.firstElementChild.firstElementChild.setAttribute("src", document.getElementById("post-photo-input").value);
+    clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
+    clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
+    clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
+    
 
+    posts.push(clone);
+    document.getElementById("posts").appendChild(clone);
+    modal_toggle();
 }
 
 
