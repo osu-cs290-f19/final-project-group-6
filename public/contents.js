@@ -55,7 +55,8 @@ function modal_accept() {
     clone.setAttribute("data-price", document.getElementById("post-time-input").value);
     clone.firstElementChild.firstElementChild.firstElementChild.setAttribute("src", document.getElementById("post-photo-input").value);
     clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
-    clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value;
+    clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value+"（"+document.getElementById("post-time-input2").value+"）";
+
     clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
     
 
