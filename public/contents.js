@@ -36,7 +36,7 @@ function modal_toggle() {
     document.getElementById("post-text-input").value = "";
     document.getElementById("post-photo-input").value = "";
     document.getElementById("post-time-input").value = "";
-	 document.getElementById("post-time-input2").value = "AC";
+	  document.getElementById("post-time-input2").value = "AC";
     document.getElementById("modal-backdrop").classList.toggle('hidden');
     document.getElementById("sell-something-modal").classList.toggle('hidden');
 }
@@ -58,7 +58,7 @@ function modal_accept() {
     clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value+"（"+document.getElementById("post-time-input2").value+"）";
 
     clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
-    
+
 
     posts.push(clone);
     document.getElementById("posts").appendChild(clone);
@@ -85,3 +85,15 @@ function update() {
         posts_elem.removeChild(posts_elem.firstElementChild);
     }
 }
+
+
+document.getElementById("delete-post").addEventListener("click", function deleteEle(){
+  var post=document.getElementsByClassName("post");
+  if(post.length>0){
+    console.log('123');
+    post[0].parentNode.removeChild(post[0]);
+  }
+  else{
+    alert("You don't have any posts to delete! ");
+  }
+});

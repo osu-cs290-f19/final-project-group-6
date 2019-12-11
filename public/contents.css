@@ -81,6 +81,8 @@ body {
     font-size: 40px;
     background-color: white;
     font-family: 'Dancing Script', cursive;
+    border-radius: 10px;
+
   }
   .home-button:hover{
     cursor: pointer;
@@ -89,8 +91,10 @@ body {
   .about-ours{
     font-size:40px;
     background-color: white;
+    border-radius: 10px;
+
   }
-  .about-ours{
+  .about-ours:hover{
     cursor: pointer;
   }
 
@@ -259,9 +263,10 @@ p:after {
   max-width: 600px;
   min-width: 350px;
   min-height: 300px;
-  margin: 40px auto;
+  margin: 100px auto;
   background-color: #fff;
   border-radius: 15px;
+  top:100px;
 }
 
 .modal-header {
@@ -313,4 +318,15 @@ p:after {
 .drop-title a{
   color:black;
   text-decoration: none;
+}
+.delete{
+  font-size: 40px;
+  background-color: white;
+  font-family: 'Dancing Script', cursive;
+  border:none;
+  border-radius: 10px;
+}
+.delete:hover{
+  color:red;
+  cursor:pointer;
 }
