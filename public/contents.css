@@ -101,7 +101,7 @@ body {
   .about-ours:hover{
     cursor: pointer;
   }
-
+//flip post
 .post {
   float:left;
   width:12.5%;
@@ -160,7 +160,7 @@ body {
 
     /*//////////////////////////////////////////////////////////*/
 
-
+//Button 
 .button {
   background: #968e8e;
   width: 180px;
@@ -219,7 +219,7 @@ p:after {
 
 
 
-
+//文本框 input text 
 
 #sell-something-button:focus {
   right: 27px;
