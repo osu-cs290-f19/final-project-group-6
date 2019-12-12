@@ -41,11 +41,21 @@ function modal_toggle() {
     document.getElementById("sell-something-modal").classList.toggle('hidden');
 }
 
+function insert(title,url,desc){
+  var input={
+    title:title,
+    url:url,
+    desc:desc
+  }
+  var posthtml=Handlebars.templates.post(input);
+  var postsSection = document.getElementById('posts');
+  postsSection.insertAdjacentHTML('beforeend', posthtml);
+}
 function modal_accept() {
-    // if (!modal_check_inputs()) {
-    //     alert("Please fill in all entries.");
-    //     return;
-    // }
+    if (!modal_check_inputs()) {
+        alert("Please fill in all entries.");
+        return;
+    }
 
     var last_post = document.getElementById("posts").lastElementChild;
     var clone = last_post.cloneNode(true);
@@ -69,30 +79,23 @@ function modal_accept() {
     // clone.getElementsByClassName('post-time-input').innerHTML = desc;
 
     //
-    // let post = {
-    //   title: title,
-    //   description: desc,
-    //   url: url
-    // }
-    //
-    // var clone = last_post.cloneNode(true);
-    //
-    //
-    // <div class="post" data-type="BC" title="West Zhou Dynasty">
-    //     <img src="{{url}}" alt="wenwu">
-    //     <a href="/posts/{{index}}">
-    //       <div class="post-info-container">
-    //           <h3 class="post-time-input">{{introductions}}</h3>
-    //           <p1 class="post-text-input">Location: {{cities}}</p1>
-    //           <p1 class="post-text-input">Time: {{time}}</p1>
-    //       </div>
-    //     </a>
-    // </div>
+    let post = {
+      title: title,
+      description: desc,
+      url: url
+    }
+
+
 
     posts.push(clone);
     // console.log(post)
     document.getElementById("posts").appendChild(clone);
     modal_toggle();
+
+
+    var posthtml=Handlebars.templates.post(post);
+    var postsSection = document.getElementById('posts');
+    postsSection.insertAdjacentHTML('beforeend', posthtml);
 }
 
 

@@ -39,6 +39,8 @@ app.get('/posts/:n', function(req, res, next){
 });
 //add new
 app.post('/addPhoto/:photo', function (req, res, next) {
+
+
   var photo = req.params.photo.toLowerCase();
   var MaxIndex = 0 ;
   for(var i = 0; i < photoData.length;i++){
