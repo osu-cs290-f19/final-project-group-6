@@ -9,8 +9,8 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-var postData = require('./ptotoData.json');
-console.log("== postData:", postData);
+var photoData = require('./photoData.json');
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
@@ -19,17 +19,19 @@ app.get('/',function(req,res,next){
   req.status(200).render(homePage);
 });
 
+app.use(express.static('public'));
+
 // 获取到全部
-app.get('/post', function(req, res, next){
-  osconsole.log("== Requesting '/'");
-  res.status(200).render('postPage', postData);
+app.get('/posts', function(req, res, next){
+  console.log("== Requesting '/'");
+  res.status(200).render('../views/posts', photoData);
 });
 // 根据index获取到其中一个
 app.get('/posts/:n', function(req, res, next){
   var index = req.params.n;
-  if (postData[index]) {
+  if (photoData[index]) {
     //TODO 返回给指定页面
-    res.status(200).render('../views/partials/post', postData[index])
+    res.status(200).render('../views/partials/post', photoData[index])
   } else {
     next();
   }
@@ -38,14 +40,14 @@ app.get('/posts/:n', function(req, res, next){
 app.post('/addPhoto/:photo', function (req, res, next) {
   var photo = req.params.photo.toLowerCase();
   var MaxIndex = 0 ;
-  for(var i = 0; i < postData.length;i++){
-    if(MaxIndex < postData[i].index){
-      MaxIndex=postData[i].index;
+  for(var i = 0; i < photoData.length;i++){
+    if(MaxIndex < photoData[i].index){
+      MaxIndex=photoData[i].index;
     }
 }
 photo.index = MaxIndex+1;
-postData.push(ptoto);
-  var str = JSON.stringify(postData);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
+photoData.push(ptoto);
+  var str = JSON.stringify(photoData);//因为nodejs的写入文件只认识字符串或者二进制数，所以把json对象转换成字符串重新写入json文件中
   fs.writeFile('./photoData.json',str,function(err){
       if(err){
           console.error(err);
@@ -54,23 +56,23 @@ postData.push(ptoto);
       console.log('----------新增成功-------------');
       res.status(200).send();
   })
-  res.status(200).render('postPage', postData);
+  res.status(200).render('postPage', photoData);
 });
 // 删除
 app.get('/delete/:n', function(req, res, next){
   var index = req.params.n;
-    console.log(postData);
+    console.log(photoData);
     //把数据读出来删除
     // 标志是否有该index被删除
     var flagIsDelete = false;
-    for(var i = 0; i < postData.length;i++){
-      if(index == postData[i].index){
+    for(var i = 0; i < photoData.length;i++){
+      if(index == photoData[i].index){
           //console.log(person.data[i])
-          postData.splice(i,1);
+          photoData.splice(i,1);
           flagIsDelete = true;
       }
   }
-        var str = JSON.stringify(postData);
+        var str = JSON.stringify(photoData);
         //然后再把数据写进去
         fs.writeFile('./photoData.json',str,function(err){
             if(err){
@@ -78,8 +80,8 @@ app.get('/delete/:n', function(req, res, next){
             }
             console.log("----------删除成功------------");
         })
-  //  res.status(200).render('../views/partials/post', postData[index])
-  res.status(200).render('postPage', postData);
+  //  res.status(200).render('../views/partials/post', photoData[index])
+  res.status(200).render('postPage', photoData);
 });
 
 // update
@@ -87,33 +89,38 @@ app.get('/delete/:n', function(req, res, next){
 app.get('/update/:photo', function(req, res, next){
   var photo = req.params.photo.toLowerCase();
   var index = photo.index;
-    console.log(postData);
+    console.log(photoData);
     //把数据读出来删除
     // 标志是否有该index被删除
-    for(var i = 0; i < postData.length;i++){
-      if(index == postData[i].index){
+    for(var i = 0; i < photoData.length;i++){
+      if(index == photoData[i].index){
           console.log('index一样的');
           for(var key in params){
-              if(postData[i][key]){
-                postData[i][key] = params[key];
+              if(photoData[i][key]){
+                photoData[i][key] = params[key];
               }
           }
       }
   }
-  postData.push(photo);
-        var str = JSON.stringify(postData);
+  photoData.push(photo);
+        var str = JSON.stringify(photoData);
         //然后再把数据写进去
-        fs.writeFile('./postData.json',str,function(err){
+        fs.writeFile('./photoData.json',str,function(err){
             if(err){
                 console.error(err);
             }
             console.log("----------更新成功------------");
         })
-  //  res.status(200).render('../views/partials/post', postData[index])
-  res.status(200).render('postPage', postData);
-  
+  //  res.status(200).render('../views/partials/post', photoData[index])
+  res.status(200).render('postPage', photoData);
+
 });
+
 app.get('*', function(req, res){
 	res.status(404);
 	res.render('404');
+});
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}!`)
 });
