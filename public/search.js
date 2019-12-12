@@ -1,3 +1,4 @@
+//search post type,it links update 
 function search(type)
 {
 	//var posts_elem = document.getElementById("posts").childNodes;
