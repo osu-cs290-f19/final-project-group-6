@@ -79,11 +79,7 @@ function modal_accept() {
     // clone.getElementsByClassName('post-time-input').innerHTML = desc;
 
     //
-    let post = {
-      title: title,
-      description: desc,
-      url: url
-    }
+
 
 
 
@@ -96,6 +92,8 @@ function modal_accept() {
     var posthtml=Handlebars.templates.post(post);
     var postsSection = document.getElementById('posts');
     postsSection.insertAdjacentHTML('beforeend', posthtml);
+
+    sendinfo(title,url,desc);
 }
 
 
@@ -130,3 +128,31 @@ document.getElementById("delete-post").addEventListener("click", function delete
     alert("You don't have any posts to delete! ");
   }
 });
+
+
+// document.getElementById("modal-accept").addEventListener("click", sendinfo);
+
+function sendinfo(title,url,desc){
+    var postRequest = new XMLHttpRequest();
+    var requestURL = '/post/'+url'/addPhoto/';
+    postRequest.open('POST', requestURL);
+
+    var requestBody = JSON.stringify({
+      title:title,
+      url:url,
+      desc:desc
+    });
+
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function (event) {
+        if (event.target.status !== 200) {
+          var responseBody = event.target.response;
+          alert("Error saving photo on server side: " + responseBody);
+        } else {
+            document.location.href = "post";
+        }
+    });
+
+    postRequest.send(requestBody);
+};
