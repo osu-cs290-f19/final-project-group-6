@@ -1,4 +1,4 @@
-//果冻按键
+//果冻按键 button 
 var $button = document.querySelector('.button');
 $button.addEventListener('click', function() {
   var duration = 0.3,
@@ -7,13 +7,13 @@ $button.addEventListener('click', function() {
   TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
   TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
 });
-//返回Home
+//返回Home Go back home
 document.getElementById('home').addEventListener('click', function(){
   window.location.href="index.html";
 });
 
 
-//创建新文本。
+//创建新文本。 create new post
 document.getElementById("filter-update-button").addEventListener("click", update);
 document.getElementById("sell-something-button").addEventListener("click", modal_toggle);
 document.getElementById("modal-close").addEventListener("click", modal_toggle);
@@ -31,7 +31,7 @@ for (var i = 1; i < size; i++) {
     current_post = current_post.nextElementSibling;
 }
 
-
+//Get post id
 function modal_toggle() {
     document.getElementById("post-text-input").value = "";
     document.getElementById("post-photo-input").value = "";
@@ -48,7 +48,7 @@ function modal_accept() {
         alert("Please fill in all entries.");
         return;
     }
-
+//print new post 
     var last_post = document.getElementById("posts").lastElementChild;
     var clone = last_post.cloneNode(true);
 	clone.setAttribute("data-type", document.getElementById("post-time-input2").value);
@@ -65,7 +65,7 @@ function modal_accept() {
     modal_toggle();
 }
 
-
+//check wrong input 
 function modal_check_inputs() {
     if (document.getElementById("post-text-input").value == ""
         || document.getElementById("post-photo-input").value == ""
@@ -76,7 +76,7 @@ function modal_check_inputs() {
     return true;
 }
 
-
+//update 
 function update() {
     var text = document.getElementById("filter-text").value.toLowerCase();
     var posts_elem = document.getElementById("posts");
