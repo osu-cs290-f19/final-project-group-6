@@ -24,6 +24,7 @@ app.use(express.static('public'));
 // 获取到全部
 app.get('/posts', function(req, res, next){
   console.log("== Requesting '/'");
+  console.log(photoData)
   res.status(200).render('../views/posts', photoData);
 });
 // 根据index获取到其中一个

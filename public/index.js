@@ -3,7 +3,7 @@ document.getElementById('home').addEventListener('click', function(){
 });
 
 document.getElementById('drop-relics').addEventListener('click', function(){
-  window.location.href="contents.html";
+  window.location.href="/posts";
 });
 
 document.getElementById('about-us').addEventListener('click', function(){

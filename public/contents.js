@@ -1,4 +1,4 @@
-//果冻按键 button 
+//果冻按键
 var $button = document.querySelector('.button');
 $button.addEventListener('click', function() {
   var duration = 0.3,
@@ -7,13 +7,13 @@ $button.addEventListener('click', function() {
   TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
   TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
 });
-//返回Home Go back home
+//返回Home
 document.getElementById('home').addEventListener('click', function(){
   window.location.href="index.html";
 });
 
 
-//创建新文本。 create new post
+//创建新文本。
 document.getElementById("filter-update-button").addEventListener("click", update);
 document.getElementById("sell-something-button").addEventListener("click", modal_toggle);
 document.getElementById("modal-close").addEventListener("click", modal_toggle);
@@ -31,7 +31,7 @@ for (var i = 1; i < size; i++) {
     current_post = current_post.nextElementSibling;
 }
 
-//Get post id
+
 function modal_toggle() {
     document.getElementById("post-text-input").value = "";
     document.getElementById("post-photo-input").value = "";
@@ -42,30 +42,60 @@ function modal_toggle() {
 }
 
 function modal_accept() {
+    // if (!modal_check_inputs()) {
+    //     alert("Please fill in all entries.");
+    //     return;
+    // }
 
-
-    if (!modal_check_inputs()) {
-        alert("Please fill in all entries.");
-        return;
-    }
-//print new post 
     var last_post = document.getElementById("posts").lastElementChild;
     var clone = last_post.cloneNode(true);
-	clone.setAttribute("data-type", document.getElementById("post-time-input2").value);
-    clone.setAttribute("data-price", document.getElementById("post-time-input").value);
-    clone.firstElementChild.firstElementChild.firstElementChild.setAttribute("src", document.getElementById("post-photo-input").value);
-    clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
-    clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value+"（"+document.getElementById("post-time-input2").value+"）";
 
-    clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
+    let title = document.getElementById("post-text-input").value;
+    let url = document.getElementById('post-photo-input').value;
+    let desc = document.getElementById('post-time-input').value;
 
+    // clone.setAttribute("data-type", "BC");
+    // clone.setAttribute("data-price", document.getElementById("post-time-input").value);
+    // clone.getElementById("post-photo-input").setAttribute("src", document.getElementById("post-photo-input").value);
+    // clone.firstElementChild.firstElementChild.firstElementChild.removeAttribute("alt");
+    // clone.firstElementChild.lastElementChild.firstElementChild.textContent = document.getElementById("post-text-input").value+"（"+document.getElementById("post-time-input2").value+"）";
+    // clone.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.textContent =   document.getElementById("post-time-input").value;
+
+    clone.setAttribute('title', title);
+    clone.firstElementChild.setAttribute('src', url);
+    clone.children[1].firstElementChild.firstElementChild.innerHTML = desc;
+    clone.children[1].setAttribute('href', `/posts/${document.getElementById("posts").childElementCount}`)
+    // clone.getElementsByClassName('post').setAttribute('title', title);
+    // clone.getElementsByClassName('post-time-input').innerHTML = desc;
+
+    //
+    // let post = {
+    //   title: title,
+    //   description: desc,
+    //   url: url
+    // }
+    //
+    // var clone = last_post.cloneNode(true);
+    //
+    //
+    // <div class="post" data-type="BC" title="West Zhou Dynasty">
+    //     <img src="{{url}}" alt="wenwu">
+    //     <a href="/posts/{{index}}">
+    //       <div class="post-info-container">
+    //           <h3 class="post-time-input">{{introductions}}</h3>
+    //           <p1 class="post-text-input">Location: {{cities}}</p1>
+    //           <p1 class="post-text-input">Time: {{time}}</p1>
+    //       </div>
+    //     </a>
+    // </div>
 
     posts.push(clone);
+    // console.log(post)
     document.getElementById("posts").appendChild(clone);
     modal_toggle();
 }
 
-//check wrong input 
+
 function modal_check_inputs() {
     if (document.getElementById("post-text-input").value == ""
         || document.getElementById("post-photo-input").value == ""
@@ -76,7 +106,7 @@ function modal_check_inputs() {
     return true;
 }
 
-//update 
+
 function update() {
     var text = document.getElementById("filter-text").value.toLowerCase();
     var posts_elem = document.getElementById("posts");
