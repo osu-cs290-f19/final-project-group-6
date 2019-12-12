@@ -19,7 +19,7 @@ app.get('/',function(req,res,next){
   req.status(200).render(homePage);
 });
 
-app.use(express.static('public'));
+
 
 // 获取到全部
 app.get('/posts', function(req, res, next){
