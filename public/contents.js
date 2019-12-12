@@ -134,7 +134,7 @@ document.getElementById("delete-post").addEventListener("click", function delete
 
 function sendinfo(title,url,desc){
     var postRequest = new XMLHttpRequest();
-    var requestURL = '/post/'+url'/addPhoto/';
+    var requestURL = '/addPhoto/'+url;
     postRequest.open('POST', requestURL);
 
     var requestBody = JSON.stringify({
