@@ -1,0 +1,61 @@
+<main class="content">
+
+      <div id="filter-city" class="filter-input" name="filter-city">
+
+      </div>
+
+    <div id="filter-update-button" ></div>
+
+</main>
+  <div class="button" id="sell-something-button"><i class="fa fa-plus"></i>
+
+    <p>Create me</p>
+  </div>
+
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="sell-something-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Add New Chinese culture relics</h3>
+      <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="post-input-element">
+        <label for="post-text-input">Title</label>
+        <input type="text" id="post-text-input"></input>
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-photo-input">Photo URL</label>
+        <input type="text" id="post-photo-input">
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-time-input">Relics description</label>
+      <input type="text" id="post-time-input">
+      </div>
+<div class="post-input-element">
+        <label for="post-time-input2">TIME(AC/BC)</label>
+        <select id="post-time-input2" style="width:200px">
+
+        <option value="AC"  selected ="selected" >AC</option>
+        <option value="BC">BC</option>
+        </select>
+      <!--  <input type="text" id="post-time-input">-->
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+      <button type="button" id="modal-accept" class="action-button">Create Post</button>
+    </div>
+
+  </div>
+</div>
+<script src="TweenMax.min.js"> </script>
+<script src="contents.js" charset="utf-8" defer></script>
+<script src="search.js"> </script>
